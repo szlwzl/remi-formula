@@ -41,7 +41,7 @@ enable_remi:
     - name: /etc/yum.repos.d/remi.repo
     - limit: '^enabled'
     - before: [0,1]
-    - after: 1
+    - after: 0
 {% else %}
 disable_remi:
   file:
@@ -49,6 +49,6 @@ disable_remi:
     - name: /etc/yum.repos.d/remi.repo
     - limit: '^enabled'
     - before: [0,1]
-    - after: 0
+    - after: 1 
 {% endif %}
 {% endif %}
